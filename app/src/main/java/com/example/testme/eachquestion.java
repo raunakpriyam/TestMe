@@ -12,6 +12,7 @@ public class eachquestion {
     private String mcorrectansr;
 
 
+
     public eachquestion(String question_num,String question,String optionA,String optionB,String optionC,String optionD,String correctansr){
         mquestion_num=question_num;
         mquestion=question;
@@ -20,6 +21,7 @@ public class eachquestion {
         moptionC=optionC;
         moptionD=optionD;
         mcorrectansr=correctansr;
+
 
 
     }
@@ -51,4 +53,6 @@ public class eachquestion {
     public String getMcorrectansr() {
         return mcorrectansr;
     }
+
+
 }

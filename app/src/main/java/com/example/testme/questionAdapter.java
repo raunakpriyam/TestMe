@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class questionAdapter extends ArrayAdapter<eachquestion> {
     RadioGroup radioUser;
-    public int finalscore=0;
+
 
 
     public questionAdapter(Context context, ArrayList<eachquestion> questions) {

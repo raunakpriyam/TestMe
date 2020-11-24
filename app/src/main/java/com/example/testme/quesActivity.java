@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -30,6 +31,7 @@ public class quesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ques);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
         mQueue= Volley.newRequestQueue(this);
         jsonParse();
         Button submit=(Button)findViewById(R.id.submit);
@@ -65,12 +67,14 @@ public class quesActivity extends AppCompatActivity {
                                 String Option_C=q.getString("Option_C");
                                 String Option_D=q.getString("Option_D");
                                 int answer=q.getInt("Answer");
+
                                 questions.add(new eachquestion(String.valueOf(ques_num),ques,Option_A,Option_B,Option_C,Option_D,String.valueOf(answer)));
 
                             }
                             questionAdapter adapter = new questionAdapter(quesActivity.this, questions);
                             ListView listView = (ListView) findViewById(R.id.list);
                             listView.setAdapter(adapter);
+
 
 
                         } catch (JSONException e) {
